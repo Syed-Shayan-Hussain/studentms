@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+     
+    
+    <title>Free Course camp</title>
+</head>
+<body class="flex flex-col items-center justify-center  w-full">
+    <header class="w-full flex flex-col items-center   justify-center ">
+
+        <div class="w-full flex  flex-row items-center py-4 justify-between px-2  shadow-md">
+        <div class="w-1/3 ">
+        <img src="images/logo1.png" class="sm:w-2/3 md:w-1/2 " alt="">
+        </div>
+        <div class="w-3/5 md:w-2/5 ">
+            <ul class="flex flex-row justify-around  items-center">
+                <li><a class="text-[#336a86] hover:underline" href="">Home</a></li>
+                <li><a class="text-[#336a86] hidden md:block hover:underline" href="">Courses</a></li>
+                <li><a class="text-[#336a86] hidden md:block hover:underline" href="admin.html">admin</a></li>
+                <li><button class="bg-[#336a86] text-white py-2 px-4 rounded-lg hover:bg-[#8eaec4] transition duration-500 ease-in-out" id="modalBtn1"> login</button> </li>
+                <li><button class="bg-[#336a86] text-white py-2 px-4 rounded-lg hover:bg-[#8eaec4] transition duration-500 ease-in-out" id="modalBtn"> Signup</button> </li>
+                
+            </ul>
+
+            
+        </div>
+</div>
+    <div class=" hidden bg-white shadow-sm px-8 py-4 fixed rounded-lg mt-[10rem] "  id="modal">
+       <h1 class="text-3xl font-bold text-gray-800 mb-6">Sign up for our course</h1>
+  
+        <form id="Sform">
+          <div class="">
+            <label class="block text-gray-800 mb-2" for="name" >
+              Name
+            </label>
+            
+            <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline"  id="Sign_name"  type="text" placeholder="John Doe">
+          </div>
+  
+          <div class="">
+            <label class="block text-gray-800 mb-2" for="email">
+              Email
+            </label>
+            <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="Sign_email"  type="email"  placeholder="example@email.com">
+          </div>
+  
+          
+        <div class="">
+            <label class="block text-gray-800 mb-2" for="confirm_password">
+              Roll no
+            </label>
+            <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="Sign_rollno" type="number" placeholder="Enter Roll no">
+          </div>
+          <div class="mb-6">
+            <label class="block text-gray-800 mb-2" for="password">
+              Password
+            </label>
+            <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="Sign_pass" type="password" placeholder="Enter a strong password">
+        </div>
+      
+          <div class="mb-6 text-center">
+            <button  class="bg-[#336a86]  text-white py-2 px-4 rounded-lg hover:bg-[#8eaec4] transition duration-500 ease-in-out" id="Sign_button">
+              Sign up
+            </button>
+          </div>
+        </form>
+    </div>
+    <div class="flex flex-col items-center justify-center px-8 fixed bg-white mt-[10rem] rounded-lg shadow-lg py-4 hidden"   id="modal1">
+    <form id="l_form">
+        <h1 class="text-3xl font-bold text-center text-gray-800 mb-6">login</h1>
+        
+        <div class="opacity-100 " id="student">
+        <div class="">
+            <label class="block text-gray-800 mb-2" for="email">
+              Roll no 
+            </label>
+            <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="l_rollno" type="number" placeholder="1">
+          </div>
+  
+          <div class="mb-6">
+            <label class="block text-gray-800 mb-2" for="password">
+              Password
+            </label>
+            <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="password_l" type="password" placeholder="Enter Password">
+            
+        </div>
+        <div class="mb-6 text-center">
+            <button class="bg-[#336a86] text-white py-2 px-4 rounded-lg hover:bg-[#8eaec4] transition duration-500 ease-in-out" id="l_btn">
+              login
+            </button>
+          </div>
+        </div>
+        <!-- <div class="opacity-0  " style="margin-top: 120 ;" id="admin">
+            <div class="">
+                <label class="block text-gray-800 mb-2" for="email">
+                  Email (Admin)
+                </label>
+                <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="email" type="email" placeholder="example@email.com">
+              </div>
+      
+              <div class="mb-6">
+                <label class="block text-gray-800 mb-2" for="password">
+                  Password
+                </label>
+                <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="password" type="password" placeholder="Enter a strong password">
+            </div>
+            <div class="mb-6 text-center">
+                <button class="bg-indigo-500 text-white py-2 px-4 rounded-lg hover:bg-indigo-600 transition duration-500 ease-in-out">
+                  login
+                </button>
+              </div>
+            </div> -->
+    </form>
+    
+</div>
+<div class="flex flex-col items-center justify-center h-[30rem] w-full space-y-8 bg-[#336a86]" > 
+    <p class=" text-5xl text-center md:text-6xl text-white font-bold">Learn from Industry Experts
+    </p>
+
+    <p class="md:w-1/2 text-white text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perspiciatis aperiam expedita praesentium neque animi aliquam aut ullam iusto architecto? Iure!</p>
+    <a href="" class="bg-white rounded-full font-semibold text-[#336a86] px-5 py-3">View All Courses</a>
+  
+</div>
+
+    </header>
+    
+  
+</body>
+</html>
+
+<script >
+
+const body=document.querySelector('body')
+    const modalBtn = document.querySelector("#modalBtn");
+        const modal = document.querySelector("#modal");
+      
+        // Show modal when trigger button is clicked
+        modalBtn.addEventListener("click", function() {
+          if(modal.classList.contains("hidden")){
+            modal.classList.remove("hidden")
+            modal.classList.add("block")
+            body.classList.add('opacity-80')}
+            
+        else{
+            modal.classList.remove("block")
+            modal.classList.add("hidden")
+            body.classList.remove('opacity-80')
+        }
+          
+          
+        });
+
+    const modalBtn1 = document.querySelector("#modalBtn1");
+    const modal1 = document.querySelector("#modal1");
+      
+        // Show modal when trigger button is clicked
+        modalBtn1.addEventListener("click", function() {
+            if(modal1.classList.contains("hidden")){
+            modal1.classList.remove("hidden")
+            modal1.classList.add("block")
+            body.classList.add('opacity-80')}
+        else{
+            modal1.classList.remove("block")
+            modal1.classList.add("hidden")
+            body.classList.remove('opacity-80')
+        }
+          
+        });
+        
+
+
+     
+ 
+</script>
+
+<script src="firebase.js" type="module"></script>
+
+<script></script>
+
+
+
+
+<!-- _________________________________________________DATABASE__________________________________________________ -->
+
+
+<!-- <script type="module">
+  
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+  
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyD1qL1YWkdsRauqFVzeV7xbVkO2IhYfmjQ",
+    authDomain: "student-dbms-9323b.firebaseapp.com",
+    projectId: "student-dbms-9323b",
+    storageBucket: "student-dbms-9323b.appspot.com",
+    messagingSenderId: "620359874402",
+    appId: "1:620359874402:web:ae9b79e97bd69985a4de3b"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+
+  import { getDatabase, ref, set, get, child, update, remove } from 'https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js'
+
+   -->
+ 
+  <!-- // ______________________________________________________SIGNUP____________________________________________________________________
+  // const sname=document.querySelector('#Sign_name')
+  // const semail=document.querySelector('#Sign_email')
+  // const spass=document.querySelector('#Sign_pass')
+  // const srollno=document.querySelector('#Sign_rollno')
+  // const sbutton=document.getElementById('Sign_button')
+  // const db=getDatabase()
+  // function alert1(){
+  //   alert("signup succesfull")
+  // }
+  
+  // function check(){
+  //   const _db= ref(db)
+  //   get(child(_db, "Students/" + rollno)).then((snapshot)=>{
+  //     if(snapshot.exists()){
+  //       while(rollno< snapshot.val().St_rollno)
+  //       rollno++
+        
+  //       console.log(rollno)
+  //     }
+  //     else{
+  //       rollno++
+  //     }
+      
+  //   })
+
+  // }
+
+  // function signup(){
+  //   console.log(sname.value)
+  //   console.log(semail.value)
+  //   console.log(spass.value)
+
+    
+  //   set(ref(db, "Students/" + srollno.value),
+  //   {
+  //     St_rollno : srollno.value,
+  //     St_name : sname.value,
+  //     St_email : semail.value,
+  //     St_pass : spass.value,
+  //     })
+
+  // document.querySelector('#Sform').addEventListener('submit', function(event) {
+  // event.preventDefault();})
+  
+    
+  // }
+  // function abc(){
+  //   const l_db= ref(db)
+  //   get(child(l_db, "Students/" + rollno)).then((snapshot)=>{
+  //     if (snapshot.exists()){
+  //       sname.value = snapshot.val().St_name
+  //       console.log(snapshot.val().St_pass ) 
+  //     }
+  //   })
+    
+  // }
+  // sbutton.addEventListener('click', function insert() {
+  //   document.querySelector('#Sform').addEventListener('submit', function(event) {
+  // event.preventDefault();})
+  // const _db= ref(db)
+  //   get(child(_db, "Students/" + srollno.value)).then((snapshot)=>{
+  //     if (snapshot.exists()){
+  //       alert("Enter new roll no")
+        
+  //     }
+  //   else{
+  //     signup() 
+      
+    
+  //     alert1() 
+
+  //   }
+  //   document.getElementById("Sform").reset(); 
+  //   })
+    
+    
+     
+    
+  
+  // })
+// ______________________________________________________LOGIN___________________________________________________________
+
+  // const lrollno=document.querySelector('#l_rollno')
+  // const login_pass= document.querySelector("#password_l")
+  // const lbutton=document.getElementById('l_btn')
+  // document.querySelector('#l_form').addEventListener('submit', function(event) {
+  // event.preventDefault()})
+  // function login(){
+  //   console.log(lrollno.value)
+    
+  //   const l_db= ref(db)
+  //   get(child(l_db, "Students/" + login_pass.value)).then((snapshot)=>{
+  //     if (snapshot.exists()){
+  //       if(lrollno.value === snapshot.val().St_pass) {
+  //         alert('login Successful')
+  //         console.log(lrollno.value, snapshot.val().St_pass)
+  //       }
+      
+  //       else{
+  //         alert("wrong password")
+  //         console.log(lrollno.value) 
+  //         console.log(snapshot.val().St_pass)
+  //       }
+  //     }
+  //   })
+    
+  // }
+//    function login(){
+//     console.log(lrollno.value , login_pass.value)
+//     const lr=lrollno.value
+//     const lp=login_pass.value
+//     const l_db= ref(db)
+//     get(child(l_db, "Students/" + lrollno.value )).then((snapshot)=>{
+//       if (snapshot.exists()){
+//         if(lp === snapshot.val().St_pass) {
+//           alert('login Successful')
+          
+//         }
+      
+//         else{
+//           alert("wrong password")
+          
+//         }
+//       }
+//     })
+//    }
+   
+//   lbutton.addEventListener('click', function log() {
+    
+    
+//     login()
+
+//     document.getElementById("l_form").reset(); 
+    
+    
+  
+//   })
+  
+
+
+// </script>
+ -->
+

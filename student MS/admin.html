@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="bg-[#8eaec4]">
+    <div class=" hidden bg-white shadow-sm px-8 py-4 absolute rounded-lg ml-[40%] "  id="modal_1">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Add New Admin</h1>
+   
+         <form id="Sform">
+           <div class="">
+             <label class="block text-gray-800 mb-2" for="name" >
+               Name
+             </label>
+             
+             <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline"  id="Sign_name"  type="text" placeholder="John Doe">
+           </div>
+   
+           <div class="">
+             <label class="block text-gray-800 mb-2" for="email">
+               Email
+             </label>
+             <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="Sign_email"  type="email"  placeholder="example@email.com">
+           </div>
+   
+           
+         <div class="">
+             <label class="block text-gray-800 mb-2" for="confirm_password">
+               Roll no
+             </label>
+             <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="Sign_rollno" type="number" placeholder="Enter Roll no">
+           </div>
+           <div class="mb-6">
+             <label class="block text-gray-800 mb-2" for="password">
+               Password
+             </label>
+             <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="Sign_pass" type="password" placeholder="Enter a strong password">
+         </div>
+       
+           <div class="mb-6 text-center">
+             <button  class="bg-[#336a86]  text-white py-2 px-4 rounded-lg hover:bg-[#8eaec4] transition duration-500 ease-in-out" id="Sign_button">
+               Sign up
+             </button>
+           </div>
+         </form>
+     </div>
+     <div class=" hidden bg-white shadow-sm px-8 py-4 absolute  rounded-lg ml-[40%] "  id="modal_u">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Update Profile</h1>
+   
+         <form id="uform">
+           <div class="">
+             <label class="block text-gray-800 mb-2" for="name" >
+               Name
+             </label>
+             
+             <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline"  id="up_name"  type="text" placeholder="John Doe">
+           </div>
+   
+           <div class="">
+             <label class="block text-gray-800 mb-2" for="email">
+               Email
+             </label>
+             <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="up_email"  type="email"  placeholder="example@email.com">
+           </div>
+   
+           
+         <div class="">
+             <label class="block text-gray-800 mb-2" for="confirm_password">
+               Roll no
+             </label>
+             <input class="bg-gray-200 border  border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" disabled id="up_rollno" type="number" placeholder="Enter Roll no">
+           </div>
+           <div class="mb-6">
+             <label class="block text-gray-800 mb-2" for="password">
+               Password
+             </label>
+             <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="up_pass" type="password" placeholder="Enter a strong password">
+         </div>
+       
+           <div class="mb-6 text-center">
+             <button  class="bg-[#336a86]  text-white py-2 px-4 rounded-lg hover:bg-[#8eaec4] transition duration-500 ease-in-out" id="up_button">
+               Update
+             </button>
+           </div>
+         </form>
+     </div>
+     <div id="modal" class="w-screen  h-screen flex items-center justify-center">
+     <div   class="flex flex-col items-center justify-center mx-auto  px-8 fixed bg-white  rounded-lg shadow-lg py-4 " >
+        <form id="l_form" class=" flex flex-col items-center ">
+            <h1 class="text-3xl  font-bold text-center text-gray-800 mb-6">Admin login</h1>
+            
+            <div class="opacity-100 " id="student">
+            <div class="">
+                <label class="block text-gray-800 mb-2" for="email">
+                  Admin no 
+                </label>
+                <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="l_rollno" type="number" placeholder="1">
+              </div>
+      
+              <div class="mb-6">
+                <label class="block text-gray-800 mb-2" for="password">
+                  Password
+                </label>
+                <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="password_l" type="password" placeholder="Enter Password">
+                
+            </div>
+            <div class="mb-6 text-center">
+                <button class="bg-[#336a86] text-white py-2 px-4 rounded-lg hover:bg-[#8eaec4] transition duration-500 ease-in-out" id="l_btn">
+                  login
+                </button>
+              </div>
+            </div>
+
+    </div>
+</div>
+
+<div id="modal2"  class="flex flex-col items-center justify-center hidden mt-[10%] ml-[40%] px-8 fixed bg-white  rounded-lg shadow-lg py-4 " >
+    <form id="cform" class=" flex flex-col items-center ">
+        <h1 class="text-3xl  font-bold text-center text-gray-800 mb-6">Add Course</h1>
+        
+        <div class="opacity-100 " >
+        <div class="">
+            <label class="block text-gray-800 mb-2" for="email">
+              Course no 
+            </label>
+            <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="courseno" type="number" placeholder="1">
+          </div>
+  
+          <div class="mb-6">
+            <label class="block text-gray-800 mb-2" for="">
+              Course Name
+            </label>
+            <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="coursename" type="text" placeholder="Data Structures">
+            
+        </div>
+        <div class="mb-6">
+            <label class="block text-gray-800 mb-2" for="">
+              Course Duration (Months)
+            </label>
+            <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="coursetime" type="number" placeholder="1">
+            
+        </div>
+        
+        <div class="mb-6 text-center">
+            <button class="bg-[#336a86] text-white py-2 px-4 rounded-lg hover:bg-[#8eaec4] transition duration-500 ease-in-out" id="addc_btn">
+              Add
+            </button>
+          </div>
+        </div>
+
+</div>
+<div id="mod3" class="hidden bg-white shadow-sm px-8 py-4 absolute rounded-lg ml-[40%] ">
+    <p id="cross3" class="ml-44 cursor-pointer w-full" >X</p>
+<h1 class="text-3xl  font-bold text-center text-gray-800 mb-6" >Add Marks</h1>
+<div id="modal3"></div>
+<button id="marksbtn" class="bg-[#336a86] text-white py-2 px-4 rounded-lg hover:outline block mt-2 mx-auto ">Enter</button>
+</div >
+
+<div id="mod5" class="hidden bg-white shadow-sm px-8 py-4 absolute rounded-lg ml-[40%] ">
+    
+<h1 class="text-3xl  font-bold text-center text-gray-800 mb-6" >Complains</h1>
+<div id="modal5" class="bg-gray-200 border-2 border-black p-4"></div>
+<button id="marksbtn" class="bg-[#336a86] text-white py-2 px-4 rounded-lg hover:outline block mt-2 mx-auto ">Enter</button>
+</div >
+<div class=" hidden bg-white shadow-sm px-8 py-4 fixed rounded-lg ml-[40%] "  id="modal4">
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">Sign up for our course</h1>
+
+     <form id="form4">
+       <div class="">
+         <label class="block text-gray-800 mb-2" for="name" >
+           Name
+         </label>
+         
+         <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline"  id="Signname"  type="text" placeholder="John Doe">
+       </div>
+
+       <div class="">
+         <label class="block text-gray-800 mb-2" for="email">
+           Email
+         </label>
+         <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="Signemail"  type="email"  placeholder="example@email.com">
+       </div>
+
+       
+     <div class="">
+         <label class="block text-gray-800 mb-2" for="confirm_password">
+           Roll no
+         </label>
+         <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="Signrollno" type="number" placeholder="Enter Roll no">
+       </div>
+       <div class="mb-6">
+         <label class="block text-gray-800 mb-2" for="password">
+           Password
+         </label>
+         <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="Signpass" type="password" placeholder="Enter a strong password">
+     </div>
+   
+       <div class="mb-6 text-center">
+         <button  class="bg-[#336a86]  text-white py-2 px-4 rounded-lg hover:bg-[#8eaec4] transition duration-500 ease-in-out" id="Signbutton">
+           Sign up
+         </button>
+       </div>
+     </form>
+ </div>
+    <!-- component -->
+
+<div id="panel" class="w-full h-full hidden ">
+    <dh-component>
+        <div class="flex flex-no-wrap ">
+            <!-- Sidebar starts -->
+            <!-- Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] -->
+            <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ --->
+            <div class="w-1/4">
+            <div  class="w-64 absolute sm:fixed  bg-gray-800 shadow min-h-screen  flex-col justify-between hidden sm:flex">
+                <div class="px-8">
+                    <div class="h-16 w-full flex items-center">
+                        <img src="images/logo1.png" alt="">
+                    </div>
+                    <ul class="mt-12">
+                        <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex flex-row items-center focus:outline-none focus:ring-2 focus:ring-white">
+                                
+                                <span class="text-sm ml-2">Name: <span id="stname" >-</span></span>
+                            </a>
+                            
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                                
+                                <span class="text-sm ml-2">Admin no: <span id="stroll" > - </span></span></a>
+  
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                                
+                                <button class="text-sm ml-2 font-bold " id="modalbtn" > Add Admin</button>
+                            </a>
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                                
+                                <button class="text-sm ml-2 font-bold " id="coursebtn"> Add Course</button>
+                            </a>
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                                
+                                <button class="text-sm ml-2 font-bold " id="std-btn"> Add Student</button>
+                            </a>
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                                
+                                <button class="text-sm ml-2 font-bold " id="up-btn"> Update Profile</button>
+                            </a>
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                                
+                                <button class="text-sm ml-2 font-bold " id="cmp-btn"> Complains</button>
+                            </a>
+                        </li>
+
+                        
+                    </ul>
+                    <div class="flex justify-center mt-24 mb-4 w-full"></div>
+                </div>
+                <div class="px-8 border-t border-gray-700">
+                    <ul class="w-full flex items-center justify-between bg-gray-800">
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                            <button aria-label="show notifications" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                                <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                    <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"></path>
+                                    <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                            <button aria-label="open chats" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                                <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                    <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10"></path>
+                                    <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2"></path>
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                            <button aria-label="open settings" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                                <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                    <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                            <button id="logout" aria-label="open logs" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                style="fill: rgba(255, 255, 255, 1);">
+                                <path d="M16 13v-2H7V8l-5 4 5 4v-3z"></path>
+                                <path
+                                    d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z">
+                                </path>
+                            </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            <div class="w-64 z-40 absolute bg-gray-800 shadow h-full flex-col justify-between sm:hidden transition duration-150 ease-in-out" id="mobile-nav">
+                <button aria-label="toggle sidebar" id="openSideBar" class="h-10 w-10 bg-gray-800 absolute right-0 mt-16 -mr-10 flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 rounded focus:ring-gray-800" onclick="sidebarHandler(true)">
+                    <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <circle cx="6" cy="10" r="2" />
+                        <line x1="6" y1="4" x2="6" y2="8" />
+                        <line x1="6" y1="12" x2="6" y2="20" />
+                        <circle cx="12" cy="16" r="2" />
+                        <line x1="12" y1="4" x2="12" y2="14" />
+                        <line x1="12" y1="18" x2="12" y2="20" />
+                        <circle cx="18" cy="7" r="2" />
+                        <line x1="18" y1="4" x2="18" y2="5" />
+                        <line x1="18" y1="9" x2="18" y2="20" />
+                    </svg>
+                </button>
+                <button aria-label="Close sidebar" id="closeSideBar" class="hidden h-10 w-10 bg-gray-800 absolute right-0 mt-16 -mr-10 flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer text-white" onclick="sidebarHandler(false)">
+                    <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+                <div class="px-8">
+                    <div class="h-16 w-full flex items-center">
+                        <img src="images/logo1.png" alt="">
+                    </div>
+                    <ul class="mt-12">
+                        <li class="flex w-full justify-between text-gray-300 hover:text-gray-500 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                                
+                                <span class="text-sm ml-2">Name: <span id="stname1" > - </span> </span>
+                            </a>
+                            
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                                
+                                <span class="text-sm ml-2">Admin no: <span id="stroll1" > - </span> </span>
+                            </a>
+                            
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                                
+                                <button class="text-sm ml-2 font-bold " id="modalbtn1"> Add Admin</button>
+                            </a>
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                                
+                                <button class="text-sm ml-2 font-bold " id="coursebtn1"> Add Course</button>
+                            </a>
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                                
+                                <button class="text-sm ml-2 font-bold " id="std-btn1"> Add Student</button>
+                            </a>
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                                
+                                <button class="text-sm ml-2 font-bold " id="up-btn1"> Update Profile</button>
+                            </a>
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                                
+                                <button class="text-sm ml-2 font-bold " id="cmp-btn1"> Complains</button>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="flex justify-center mt-48 mb-4 w-full">
+                        
+                    </div>
+                </div>
+                <div class="px-8 border-t border-gray-700">
+                    <ul class="w-full flex items-center justify-between bg-gray-800">
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                            <button aria-label="show notifications" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                                <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                    <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"></path>
+                                    <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                           <button aria-label="open chats" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                               <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                   <path stroke="none" d="M0 0h24v24H0z"></path>
+                                   <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10"></path>
+                                   <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2"></path>
+                               </svg>
+                           </button>
+                        </li>
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                            <button aria-label="open settings" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                                <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                    <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                            <button id="logout1" aria-label="open logs" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    style="fill: rgba(255, 255, 255, 1);">
+                                    <path d="M16 13v-2H7V8l-5 4 5 4v-3z"></path>
+                                    <path
+                                        d="M20 3h-9c-1.103 0-2 .897-2 2v4h2V5h9v14h-9v-4H9v4c0 1.103.897 2 2 2h9c1.103 0 2-.897 2-2V5c0-1.103-.897-2-2-2z">
+                                    </path>
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Sidebar ends -->
+            <!-- Remove class [ h-64 ] when adding a card block -->
+            <div class="container mx-auto py-10  h-64 md:w-4/5 w-11/12 px-6">
+                <!-- Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border -->
+                
+                <div class="w-full h-full rounded   border-gray-300">
+                    <p class="text-4xl font-bold text-center">Admin Panel</p>
+                    <div class="max-w-full mt-8  max-h-[15rem] overflow-auto">
+                    <table class="table-fixed  bg-white min-w-full  " >
+                        <thead>
+                            <tr>
+                                <th colspan="1" class="bg-gray-200 border border-gray-400  p-2 rounded-sm  ">S.no</th>
+                                <th colspan="2" class="bg-gray-200 border border-gray-400  p-2 rounded-sm ">Student Name</th>
+                                <th colspan="1" class="bg-gray-200 border border-gray-400  p-2 rounded-sm ">Roll no</th>
+                                <th colspan="2" class="bg-gray-200 border border-gray-400  p-2 rounded-sm ">Email</th>
+                            </tr>
+                        </thead>
+                        <tbody id="t_body" >
+                            
+                        </tbody>
+                    </table>
+                </div>
+                <div class="flex flex-col md:flex-row md:space-x-4">
+                    <div class="mt-12">
+                        <label for="" class="block text-gray-800 mb-2 font-bold"> Remove Student</label>
+
+                        <input type="text" id="del" class="bg-gray-200 border border-gray-400  p-2 rounded-lg focus:outline-none focus:shadow-outline" placeholder="Roll no" >
+                        <button id="delbtn" class="bg-[#336a86] text-white py-2 px-4 rounded-lg hover:outline block mt-2 ">Enter</button>
+                    </div>
+                    <div class="mt-12">
+                        <label for="" class="block text-gray-800 mb-2 font-bold"> Add Student Marks</label>
+
+                        <input type="text" id="mark" class="bg-gray-200 border border-gray-400  p-2 rounded-lg focus:outline-none focus:shadow-outline" placeholder="Roll no" >
+                        <button id="markbtn" class="bg-[#336a86] text-white py-2 px-4 rounded-lg hover:outline block mt-2 ">Enter</button>
+                    </div>
+                </div>
+                <div class="w-full h-full rounded   border-gray-300">
+                    <h1 class="text-4xl font-bold text-center">Available Courses</h1>
+                    <div class="max-w-full mt-8  max-h-[15rem] shadow-lg overflow-auto">
+                    <table class="table-fixed border-gray-400 w-full ">
+                        <thead>
+                            <tr>
+                                <th colspan="1" class="bg-gray-200 border border-gray-400  p-2 rounded-sm ">Course ID</th>
+                                <th colspan="2" class="bg-gray-200 border border-gray-400  p-2 rounded-sm ">Course Name</th>
+                                <th colspan="2" class="bg-gray-200 border border-gray-400  p-2 rounded-sm ">Course Duration (Months)</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody id="t-body">
+                           
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-12">
+                    <label for="" class="block text-gray-800 mb-2 font-bold"> Remove Course</label>
+
+                    <input type="text" id="rem" class="bg-gray-200 border border-gray-400  p-2 rounded-lg focus:outline-none focus:shadow-outline" placeholder="Roll no" >
+                    <button id="rembtn" class="bg-[#336a86] text-white py-2 px-4 rounded-lg hover:outline block mt-2 ">Enter</button>
+                </div>
+            </div>
+            </div>
+            
+
+            </div>
+        </div>
+        
+    </dh-component>
+</div>
+        
+        
+<style>
+    .cell{
+        background-color: #e5e7eb;
+        border-radius: 10px;
+        border: solid gray;
+        margin-bottom: 16px;
+    }
+</style>
+        
+
+
+</body>
+
+</html>
+<script src="admin.js" type="module"></script>
+<script>
+    var sideBar = document.getElementById("mobile-nav");
+    var openSidebar = document.getElementById("openSideBar");
+    var closeSidebar = document.getElementById("closeSideBar");
+    sideBar.style.transform = "translateX(-260px)";
+
+    function sidebarHandler(flag) {
+        if (flag) {
+            sideBar.style.transform = "translateX(0px)";
+            openSidebar.classList.add("hidden");
+            closeSidebar.classList.remove("hidden");
+        } else {
+            sideBar.style.transform = "translateX(-260px)";
+            closeSidebar.classList.add("hidden");
+            openSidebar.classList.remove("hidden");
+        }
+    }
+    
+    const body=document.querySelector('body')
+    const modalBtn = document.querySelector("#modalbtn");
+    const modalBtn1 = document.querySelector("#modalbtn1");
+    const modal_1 = document.querySelector("#modal_1");
+    function open() {
+          if(modal_1.classList.contains("hidden")){
+            modal_1.classList.remove("hidden")
+            
+            }
+            
+        else{
+            modal_1.classList.remove("block")
+            modal_1.classList.add("hidden")
+            
+        }
+          
+          
+        }
+      
+        // Show modal when trigger button is clicked
+        modalBtn.addEventListener("click", open);
+        modalBtn1.addEventListener("click", open);
+
+    const coursebtn = document.querySelector("#coursebtn");
+    const coursebtn1 = document.querySelector("#coursebtn1");
+    const modal2 = document.querySelector("#modal2");
+    function open1() {
+          if(modal2.classList.contains("hidden")){
+            modal2.classList.remove("hidden")
+            
+            }
+            
+        else{
+            modal2.classList.remove("block")
+            modal2.classList.add("hidden")
+            
+        }
+          
+          
+        }
+      
+        // Show modal when trigger button is clicked
+        coursebtn.addEventListener("click", open1);
+        coursebtn1.addEventListener("click", open1);
+
+    const std_btn = document.querySelector("#std-btn");
+    const std_btn1 = document.querySelector("#std-btn1");
+    const modal4 = document.querySelector("#modal4");
+    function open2() {
+          if(modal4.classList.contains("hidden")){
+            modal4.classList.remove("hidden")
+            
+            }
+            
+        else{
+            modal4.classList.remove("block")
+            modal4.classList.add("hidden")
+            
+        }
+          
+          
+        }
+      
+        // Show modal when trigger button is clicked
+        std_btn.addEventListener("click", open2);
+        std_btn1.addEventListener("click", open2);
+
+    const up_btn = document.querySelector("#up-btn");
+    const up_btn1 = document.querySelector("#up-btn1");
+    const modal_u = document.querySelector("#modal_u");
+    function open3() {
+          if(modal_u.classList.contains("hidden")){
+            modal_u.classList.remove("hidden")
+            
+            }
+            
+        else{
+            modal_u.classList.remove("block")
+            modal_u.classList.add("hidden")
+            
+        }
+          
+          
+        }
+      
+        // Show modal when trigger button is clicked
+        up_btn.addEventListener("click", open3);
+        up_btn1.addEventListener("click", open3);
+    const cmp_btn = document.querySelector("#cmp-btn");
+    const cmp_btn1 = document.querySelector("#cmp-btn1");
+    const mod5 = document.querySelector("#mod5");
+    function open4() {
+          if(mod5.classList.contains("hidden")){
+            mod5.classList.remove("hidden")
+            
+            }
+            
+        else{
+            mod5.classList.remove("block")
+            mod5.classList.add("hidden")
+            
+        }
+          
+          
+        }
+      
+        // Show modal when trigger button is clicked
+        cmp_btn.addEventListener("click", open4);
+        cmp_btn1.addEventListener("click", open4);
+</script>

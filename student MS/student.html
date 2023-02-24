@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+<body class="bg-[#8eaec4]">
+    <div class=" hidden bg-white shadow-sm px-8 py-4 absolute  rounded-lg ml-[40%] "  id="modal_u">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6">Update Profile</h1>
+   
+         <form id="uform">
+           <div class="">
+             <label class="block text-gray-800 mb-2" for="name" >
+               Name
+             </label>
+             
+             <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline"  id="up_name"  type="text" placeholder="John Doe">
+           </div>
+   
+           <div class="">
+             <label class="block text-gray-800 mb-2" for="email">
+               Email
+             </label>
+             <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="up_email"  type="email"  placeholder="example@email.com">
+           </div>
+   
+           
+         <div class="">
+             <label class="block text-gray-800 mb-2" for="confirm_password">
+               Roll no
+             </label>
+             <input class="bg-gray-200 border  border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" disabled id="up_rollno" type="number" placeholder="Enter Roll no">
+           </div>
+           <div class="mb-6">
+             <label class="block text-gray-800 mb-2" for="password">
+               Password
+             </label>
+             <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" id="up_pass" type="password" placeholder="Enter a strong password">
+         </div>
+       
+           <div class="mb-6 text-center">
+             <button  class="bg-[#336a86]  text-white py-2 px-4 rounded-lg hover:bg-[#8eaec4] transition duration-500 ease-in-out" id="up_button">
+               Update
+             </button>
+           </div>
+         </form>
+     </div>
+    <!-- component -->
+    <div id="mod5" class="hidden bg-white shadow-sm px-8 py-4 absolute  rounded-lg ml-[40%] ">
+    
+        <h1 class="text-3xl  font-bold text-center text-gray-800 mb-6" >Message center</h1>
+        <div id="modal5" class="bg-gray-200 border-2 border-black p-4 max-h-[20rem] md:min-w-[30rem] overflow-auto"></div>
+        <div class="mt-4">
+            <input class="bg-gray-200 border border-gray-400 w-full p-2 rounded-lg focus:outline-none focus:shadow-outline" type="text" placeholder="type message" name="" id="msg">
+        <button id="msgbtn" class="bg-[#336a86] text-white py-2 px-4 rounded-lg hover:outline block mt-2 mx-auto ">Send</button>
+        </div >
+    </div>
+<div class="w-full h-full">
+    <dh-component>
+        <div class="flex flex-no-wrap">
+            <!-- Sidebar starts -->
+            <!-- Remove class [ hidden ] and replace [ sm:flex ] with [ flex ] -->
+            <!--- more free and premium Tailwind CSS components at https://tailwinduikit.com/ --->
+            <div class="w-1/4">
+            <div  class="w-64 absolute sm:fixed  min-h-screen bg-gray-800 shadow md:h-full flex-col justify-between hidden sm:flex">
+                <div class="px-8">
+                    <div class="h-16 w-full flex items-center">
+                        <img src="images/logo1.png" alt="">
+                    </div>
+                    <ul class="mt-12">
+                        <li class="flex w-full justify-between text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex flex-row items-center focus:outline-none focus:ring-2 focus:ring-white">
+                                
+                                <span class="text-sm ml-2">Name: <span id="stname" >-</span></span>
+                            </a>
+                            
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                                
+                                <span class="text-sm ml-2">Roll no: <span id="stroll" > - </span></span></a>
+  
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                                
+                                <span class="text-sm ml-2">Enrolled Courses: <span id="scourse" >-</span> </span>
+                            </a>
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                                
+                                <button class="text-sm ml-2 font-bold " id="up-btn"> Update Profile</button>
+                            </a>
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                                
+                                <button class="text-sm ml-2 font-bold " id="cmp-btn"> Message</button>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    <div class="flex justify-center mt-48 mb-4 w-full"></div>
+                </div>
+                <div class="px-8 border-t border-gray-700">
+                    <ul class="w-full flex items-center justify-between bg-gray-800">
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                            <button aria-label="show notifications" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                                <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                    <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"></path>
+                                    <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                            <button aria-label="open chats" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                                <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                    <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10"></path>
+                                    <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2"></path>
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                            <button aria-label="open settings" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                                <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                    <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                            <button id="logout" aria-label="open logs" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                                <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                    <rect x="3" y="4" width="18" height="4" rx="2"></rect>
+                                    <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10"></path>
+                                    <line x1="10" y1="12" x2="14" y2="12"></line>
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+            <div class="w-64 z-40 fixed bg-gray-800 shadow h-full flex-col justify-between sm:hidden transition duration-150 ease-in-out" id="mobile-nav">
+                <button aria-label="toggle sidebar" id="openSideBar" class="h-10 w-10 bg-gray-800 absolute right-0 mt-16 -mr-10 flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer focus:outline-none focus:ring-2 focus:ring-offset-2 rounded focus:ring-gray-800" onclick="sidebarHandler(true)">
+                    <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-adjustments" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <circle cx="6" cy="10" r="2" />
+                        <line x1="6" y1="4" x2="6" y2="8" />
+                        <line x1="6" y1="12" x2="6" y2="20" />
+                        <circle cx="12" cy="16" r="2" />
+                        <line x1="12" y1="4" x2="12" y2="14" />
+                        <line x1="12" y1="18" x2="12" y2="20" />
+                        <circle cx="18" cy="7" r="2" />
+                        <line x1="18" y1="4" x2="18" y2="5" />
+                        <line x1="18" y1="9" x2="18" y2="20" />
+                    </svg>
+                </button>
+                <button aria-label="Close sidebar" id="closeSideBar" class="hidden h-10 w-10 bg-gray-800 absolute right-0 mt-16 -mr-10 flex items-center shadow rounded-tr rounded-br justify-center cursor-pointer text-white" onclick="sidebarHandler(false)">
+                    <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-x" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" />
+                        <line x1="18" y1="6" x2="6" y2="18" />
+                        <line x1="6" y1="6" x2="18" y2="18" />
+                    </svg>
+                </button>
+                <div class="px-8">
+                    <div class="h-16 w-full flex items-center">
+                        <img src="images/logo1.png" alt="">
+                    </div>
+                    <ul class="mt-12">
+                        <li class="flex w-full justify-between text-gray-300 hover:text-gray-500 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                                
+                                <span class="text-sm ml-2">Name: <span id="stname1" > - </span> </span>
+                            </a>
+                            
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white">
+                                
+                                <span class="text-sm ml-2">Roll no: <span id="stroll1" > - </span> </span>
+                            </a>
+                            
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                                
+                                <span class="text-sm ml-2">Enrolled Courses: <span id="stcourse" >-</span> </span>
+                            </a>
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                                
+                                <button class="text-sm ml-2 font-bold " id="up-btn1"> Update Profile</button>
+                            </a>
+                        </li>
+                        <li class="flex w-full justify-between text-gray-400 hover:text-gray-300 cursor-pointer items-center mb-6">
+                            <a href="javascript:void(0)" class="flex items-center focus:outline-none focus:ring-2 focus:ring-white" >
+                                
+                                <button class="text-sm ml-2 font-bold " id="cmp-btn1"> Message</button>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    <div class="flex justify-center mt-48 mb-4 w-full">
+                        
+                    </div>
+                </div>
+                <div class="px-8 border-t border-gray-700">
+                    <ul class="w-full flex items-center justify-between bg-gray-800">
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                            <button aria-label="show notifications" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                                <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-bell" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                    <path d="M10 5a2 2 0 0 1 4 0a7 7 0 0 1 4 6v3a4 4 0 0 0 2 3h-16a4 4 0 0 0 2 -3v-3a7 7 0 0 1 4 -6"></path>
+                                    <path d="M9 17v1a3 3 0 0 0 6 0v-1"></path>
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                           <button aria-label="open chats" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                               <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                   <path stroke="none" d="M0 0h24v24H0z"></path>
+                                   <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10"></path>
+                                   <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2"></path>
+                               </svg>
+                           </button>
+                        </li>
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                            <button aria-label="open settings" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                                <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-settings" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                    <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 0 0 2.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 0 0 1.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 0 0 -1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 0 0 -2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 0 0 -2.573 -1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 0 0 -1.065 -2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 0 0 1.066 -2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+                                    <circle cx="12" cy="12" r="3"></circle>
+                                </svg>
+                            </button>
+                        </li>
+                        <li class="cursor-pointer text-white pt-5 pb-3">
+                            <button id="logout1" aria-label="open logs" class="focus:outline-none focus:ring-2 rounded focus:ring-gray-300">
+                                <svg  xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="20" height="20" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                                    <path stroke="none" d="M0 0h24v24H0z"></path>
+                                    <rect x="3" y="4" width="18" height="4" rx="2"></rect>
+                                    <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10"></path>
+                                    <line x1="10" y1="12" x2="14" y2="12"></line>
+                                </svg>
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Sidebar ends -->
+            <!-- Remove class [ h-64 ] when adding a card block -->
+            <div class="container mx-auto py-10   h-64 md:w-4/5 w-11/12 px-6">
+                <!-- Remove class [ border-dashed border-2 border-gray-300 ] to remove dotted border -->
+                <div class="w-full h-full rounded   border-gray-300">
+                    <h1 class="text-4xl font-bold text-center">Available Courses</h1>
+                    <div class="max-w-full mt-8  max-h-[15rem] shadow-lg overflow-auto">
+                    <table class="table-fixed border-gray-400 w-full ">
+                        <thead>
+                            <tr>
+                                <th colspan="1" class="bg-gray-200 border border-gray-400  p-2 rounded-sm ">Course ID</th>
+                                <th colspan="2" class="bg-gray-200 border border-gray-400  p-2 rounded-sm ">Course Name</th>
+                                <th colspan="2" class="bg-gray-200 border border-gray-400  p-2 rounded-sm ">Course Duration (Months)</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody id="t-body">
+                           
+                        </tbody>
+                    </table>
+                </div>
+                    <div class="mt-12">
+                        <label for="" class="block text-gray-800 mb-2 font-bold">Select Course</label>
+        
+                        <input type="text" id="course" class="bg-gray-200 border border-gray-400  p-2 rounded-lg focus:outline-none focus:shadow-outline" placeholder="Add course no" >
+                        <button id="adbtn" class="bg-[#336a86] text-white py-2 px-4 rounded-lg hover:outline block mt-2 ">Enter</button>
+                    </div>
+                    <table class="table-fixed border-gray-400 shadow-lg w-full mt-8">
+                        <h1 class="text-4xl font-bold text-center">Enrolled Courses</h1>
+                        <thead>
+                            <tr>
+                                <th colspan="1" class="bg-gray-200 border border-gray-400  p-2 rounded-sm ">Course ID</th>
+                                <th colspan="2" class="bg-gray-200 border border-gray-400  p-2 rounded-sm ">Course Name</th>
+                                <th colspan="1" class="bg-gray-200 border border-gray-400  p-2 rounded-sm ">Course Marks</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ct-body">
+                           
+                        </tbody>
+                    </table>
+                    <div class="h-12"></div>
+                    <div class="mt-12">
+                        <label for="" class="block text-gray-800 mb-2 font-bold">Complain/Review</label>
+        
+                        <input type="text" id="complain" class="bg-gray-200 border border-gray-400 w-full  p-2 rounded-lg focus:outline-none focus:shadow-outline" placeholder="Add text" >
+                        <button id="c_btn" class="bg-[#336a86] text-white py-2 px-4 rounded-lg hover:outline block mt-2 ">Enter</button>
+                    </div>
+                </div>
+            </div>
+            
+            </div>
+            
+        </div>
+        
+        
+    </dh-component>
+</div>
+
+</body>
+</html>
+
+<script>
+    var sideBar = document.getElementById("mobile-nav");
+    var openSidebar = document.getElementById("openSideBar");
+    var closeSidebar = document.getElementById("closeSideBar");
+    sideBar.style.transform = "translateX(-260px)";
+
+    function sidebarHandler(flag) {
+        if (flag) {
+            sideBar.style.transform = "translateX(0px)";
+            openSidebar.classList.add("hidden");
+            closeSidebar.classList.remove("hidden");
+        } else {
+            sideBar.style.transform = "translateX(-260px)";
+            closeSidebar.classList.add("hidden");
+            openSidebar.classList.remove("hidden");
+        }
+    }
+    const up_btn = document.querySelector("#up-btn");
+    const up_btn1 = document.querySelector("#up-btn1");
+    const modal_u = document.querySelector("#modal_u");
+    function open3() {
+          if(modal_u.classList.contains("hidden")){
+            modal_u.classList.remove("hidden")
+            
+            }
+            
+        else{
+            modal_u.classList.remove("block")
+            modal_u.classList.add("hidden")
+            
+        }
+          
+          
+        }
+      
+        // Show modal when trigger button is clicked
+        up_btn.addEventListener("click", open3);
+        up_btn1.addEventListener("click", open3);
+        const cmp_btn = document.querySelector("#cmp-btn");
+    const cmp_btn1 = document.querySelector("#cmp-btn1");
+    const mod5 = document.querySelector("#mod5");
+    function open4() {
+          if(mod5.classList.contains("hidden")){
+            mod5.classList.remove("hidden")
+            
+            }
+            
+        else{
+            mod5.classList.remove("block")
+            mod5.classList.add("hidden")
+            
+        }
+          
+          
+        }
+      
+        // Show modal when trigger button is clicked
+        cmp_btn.addEventListener("click", open4);
+        cmp_btn1.addEventListener("click", open4);
+</script>
+<script src="firebase1.js" type="module">
+
+</script>
